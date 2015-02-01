@@ -1,12 +1,17 @@
 {{#if isEditing}}
   {{partial "goat/edit"}}
-  <button class="tiny radius" {{action "doneEditing"}}>Done</button>
+  <button class="tiny radius" {{action "acceptChanges"}}>Done</button>
 {{else}}
   <button class="tiny radius" {{action "edit"}}>Edit</button>
+  <button class="tiny radius alert" {{action "deleteGoat"}}>Delete</button>
+
 {{/if}}
 
 <div class="row">
-  <h1>{{name}}</h1>
+  <span {{bind-attr class="isFavorite:favorite"}}>
+      {{input type="checkbox" checked=isFavorite class="toggle"}}
+      <label><h1>{{name}}</h1></label>
+  </span>
 </div>
 
 <div class="row">

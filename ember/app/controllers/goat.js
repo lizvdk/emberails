@@ -5,8 +5,14 @@ export default Ember.ObjectController.extend({
     edit: function() {
       this.set('isEditing', true);
     },
-    doneEditing: function() {
+    acceptChanges: function() {
       this.set('isEditing', false);
+      this.get('model').save();
+    },
+    deleteGoat: function() {
+      var goat = this.get('model');
+      goat.deleteRecord();
+      goat.save();
     }
   }
 });
