@@ -1,10 +1,20 @@
-<h3>Goats</h3>
-<ul class="no-bullet">
-  {{#each}}
-    <li>
-      {{name}}
-    </li>
-  {{/each}}
-</ul>
+<div class="row">
+  
+  <div class="small-3 columns">
+    <h3>Goats</h3>
+    <ul class="no-bullet">
+      {{#each}}
+        <li>
+          {{#link-to "goat" this}}
+            {{name}}
+          {{/link-to}}
+        </li>
+      {{/each}}
+    </ul>
+  </div>
 
-{{outlet}}
+  <div class="small-9 columns">
+    {{outlet}}
+  </div>
+
+</div>
