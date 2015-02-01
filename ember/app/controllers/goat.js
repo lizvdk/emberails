@@ -11,6 +11,7 @@ export default Ember.ObjectController.extend({
     },
     deleteGoat: function() {
       var goat = this.get('model');
+      this.transitionTo('goats');
       goat.deleteRecord();
       goat.save();
     }
