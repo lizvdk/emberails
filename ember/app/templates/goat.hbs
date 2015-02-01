@@ -1,3 +1,10 @@
+{{#if isEditing}}
+  {{partial "goat/edit"}}
+  <button class="tiny radius" {{action "doneEditing"}}>Done</button>
+{{else}}
+  <button class="tiny radius" {{action "edit"}}>Edit</button>
+{{/if}}
+
 <div class="row">
   <h1>{{name}}</h1>
 </div>
