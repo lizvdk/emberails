@@ -7,7 +7,8 @@ var Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('about');
-  this.route("goats");
+  this.resource("goats");
+  this.resource("goat", { path: "/goats/:goat_id" });
 });
 
 export default Router;
