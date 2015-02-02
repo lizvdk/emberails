@@ -9,6 +9,7 @@ Router.map(function() {
   this.route('about');
   this.route("goats", { 'path' : '/goats'}, function() {
     this.route("show", { path: "/:id" });
+    this.route("new");
   });
 });
 
