@@ -6,19 +6,27 @@ export default Ember.Controller.extend({
             var name = this.get('name');
             var bio= this.get('bio');
             var snack= this.get('snack');
+            var photoUrl= this.get('photoUrl');
+
+            if (!photoUrl || photoUrl.length < 10) {
+              photoUrl = "img/default-goat.png";
+            }
 
             var goat = this.store.createRecord('goat', {
                     name:name,
                     bio:bio,
                     snack:snack,
-                    isFavorite:false
+                    isFavorite:false,
+                    photoUrl:photoUrl
 
             });
+
             this.set('name','');
             this.set('bio','');
             this.set('snack','');
+            this.set('photoUrl','');
             goat.save();
-            this.transitionToRoute('goats.show', goat);
+            this.transitionToRoute('goats.index');
 
     }
   }
