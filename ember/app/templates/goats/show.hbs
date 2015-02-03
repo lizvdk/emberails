@@ -1,23 +1,21 @@
-{{#if isEditing}}
-  {{partial "goats/form"}}
-  <button class="tiny radius" {{action "acceptChanges"}}>Done</button>
-{{else}}
-  <button class="tiny radius" {{action "edit"}}>Edit</button>
-  <button class="tiny radius alert" {{action "deleteGoat"}}>Delete</button>
-
-{{/if}}
-
 <div class="row">
-  <span {{bind-attr class="isFavorite:favorite"}}>
-      {{input type="checkbox" checked=isFavorite class="toggle"}}
-      <label><h1>{{name}}</h1></label>
-  </span>
+    <label><h1>{{name}}</h1></label>
 </div>
 
-<div>
+<div class="row">
   <img {{bind-attr src=photoUrl}} alt="goat photo" class="goat-show-photo">
-
     <b>Bio:</b> {{bio}} <br />
     <b>Favorite Snack:</b> {{snack}}
-    
+</div>
+
+<br />
+
+<div class="row">
+  {{#if isEditing}}
+    {{partial "goats/form"}}
+    <button class="tiny radius" {{action "acceptChanges"}}>Done</button>
+  {{else}}
+    <button class="tiny radius" {{action "edit"}}>Edit</button>
+    <button class="tiny radius alert" {{action "deleteGoat"}}>Delete</button>
+  {{/if}}
 </div>
