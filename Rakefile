@@ -28,7 +28,7 @@ task :deploy do
 
   sh 'git subtree push -P rails heroku master'
 
-  release_output = `heroku releases -a rescue-mission-production`.split "\n"
+  release_output = `heroku releases -a emberails_production`.split "\n"
   latest_release = release_output[1].match(/v\d+/).to_s
 
   tags = `git tag`
