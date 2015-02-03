@@ -1,0 +1,15 @@
+<div>
+  <h3>Top 8 Goats</h3>
+</div>
+
+<div class="row">
+  <ul class="small-block-grid-4">
+  {{#each favoriteGoat}}
+      <li>
+        {{#link-to "goats.show" this }}
+          <img {{bind-attr src=photoUrl}} alt="goat photo" class="th top-8-photo">
+        {{/link-to}}
+      </li>
+  {{/each}}
+  </ul>
+</div>
