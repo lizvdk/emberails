@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150201222835) do
+ActiveRecord::Schema.define(version: 20150202233056) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,8 +21,9 @@ ActiveRecord::Schema.define(version: 20150201222835) do
     t.text     "bio"
     t.string   "snack"
     t.boolean  "is_favorite"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                                   null: false
+    t.datetime "updated_at",                                   null: false
+    t.string   "photo_url",   default: "img/default-goat.png"
   end
 
 end
