@@ -6,6 +6,7 @@ gem 'rails-api'
 gem 'spring', :group => :development
 gem 'pg'
 gem 'active_model_serializers', '0.8.3'
+gem 'faker'
 
 group :test do
   gem 'shoulda-matchers', require: false
@@ -13,7 +14,8 @@ end
 
 group :development, :test do
   gem 'factory_girl_rails'
-  gem 'faker'
   gem 'pry-rails'
   gem 'rspec-rails', '~> 3.0.0'
 end
+
+gem 'rails_12factor', group: :production
