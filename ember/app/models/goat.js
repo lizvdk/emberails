@@ -5,5 +5,5 @@ export default DS.Model.extend({
     bio: DS.attr('string'),
     snack: DS.attr('string'),
     isFavorite: DS.attr('boolean'),
-    photoUrl: DS.attr('string'),
+    photoUrl: DS.attr('string')
 });
