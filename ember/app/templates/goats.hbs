@@ -4,10 +4,10 @@
     <h3>Goats</h3>
     <ul class="no-bullet">
       <li>{{#link-to "goats.new" class="button tiny radius"}}Add a Goat{{/link-to}}</li>
-      {{#each }}
+      {{#each goat in model}}
         <li>
-          {{#link-to "goats.show" this }}
-            {{name}}
+          {{#link-to "goats.show" goat }}
+            {{goat.name}}
           {{/link-to}}
         </li>
       {{/each}}

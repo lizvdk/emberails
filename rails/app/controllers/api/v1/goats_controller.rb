@@ -1,4 +1,4 @@
-class GoatsController < ApplicationController
+class Api::V1::GoatsController < ApplicationController
   before_action :set_goat, only: [:show, :update, :destroy]
 
   # GET /goats
@@ -12,6 +12,8 @@ class GoatsController < ApplicationController
   # GET /goats/1
   # GET /goats/1.json
   def show
+    @goat = Goat.find(params[:id])
+
     render json: @goat
   end
 
@@ -21,9 +23,9 @@ class GoatsController < ApplicationController
     @goat = Goat.new(goat_params)
 
     if @goat.save
-      render json: @goat, status: :created, location: @goat
+      render json: @goat, status: 201, location: [:api, :v1, @goat]
     else
-      render json: @goat.errors, status: :unprocessable_entity
+      render json: { errors: @goat.errors }, status: 422
     end
   end
 

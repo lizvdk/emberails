@@ -70,10 +70,8 @@ end
 10.times do
   Goat.create(
     name: "#{Faker::Name.first_name} McGoat",
-    bio: "A #{["funny", "silly", "sweet", "serious"].sample} goat.
-          #{Faker::Lorem.paragraph}",
-    snack: "#{["Your", "Random"].sample}
-            #{["Jeans", "Tin Cans", "Trash", "Babies"].sample}",
+    bio: "A #{["funny", "silly", "sweet", "serious"].sample} goat. #{Faker::Lorem.paragraph}",
+    snack: "#{["Your", "Random"].sample} #{["Jeans", "Tin Cans", "Trash", "Babies"].sample}",
     is_favorite: false
   )
 end
