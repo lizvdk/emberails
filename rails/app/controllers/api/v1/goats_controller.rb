@@ -1,4 +1,4 @@
-class GoatsController < ApplicationController
+class Api::V1::GoatsController < ApplicationController
   before_action :set_goat, only: [:show, :update, :destroy]
 
   # GET /goats
@@ -12,6 +12,8 @@ class GoatsController < ApplicationController
   # GET /goats/1
   # GET /goats/1.json
   def show
+    @goat = Goat.find(params[:id])
+    
     render json: @goat
   end
 
