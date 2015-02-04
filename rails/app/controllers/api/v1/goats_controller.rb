@@ -23,7 +23,7 @@ class Api::V1::GoatsController < ApplicationController
     @goat = Goat.new(goat_params)
 
     if @goat.save
-      render json: @goat, status: :201, location: [:api, :v1, @goat]
+      render json: @goat, status: 201, location: [:api, :v1, @goat]
     else
       render json: { errors: @goat.errors }, status: 422
     end
