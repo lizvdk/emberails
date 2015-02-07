@@ -1,11 +1,11 @@
 <div class="row">
-    <label><h1>{{name}}</h1></label>
+    <label><h1>{{model.name}}</h1></label>
 </div>
 
 <div class="row">
-  <img {{bind-attr src=photoUrl}} alt="goat photo" class="goat-show-photo">
-    <b>Bio:</b> {{bio}} <br />
-    <b>Favorite Snack:</b> {{snack}}
+  <img {{bind-attr src=model.photoUrl}} alt="goat photo" class="goat-show-photo">
+    <b>Bio:</b> {{model.bio}} <br />
+    <b>Favorite Snack:</b> {{model.snack}}
 </div>
 
 <br />
@@ -18,4 +18,6 @@
     <button class="tiny radius" {{action "edit"}}>Edit</button>
     <button class="tiny radius alert" {{action "deleteGoat"}}>Delete</button>
   {{/if}}
+
+  {{goat-fav-button goat=model}}
 </div>
