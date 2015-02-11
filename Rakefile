@@ -26,8 +26,7 @@ task :deploy do
     sh 'git commit -m "Asset compilation for deployment"'
   end
 
-  sh 'git subtree push -P rails heroku master --force'
-  sh 'git push heroku `git subtree split --prefix rails master`:master --force'
+  sh 'git subtree push -P rails heroku master'
 
   release_output = `heroku releases -a goatspace`.split "\n"
   latest_release = release_output[1].match(/v\d+/).to_s
