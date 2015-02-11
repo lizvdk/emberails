@@ -9,7 +9,7 @@ export default Ember.Controller.extend({
             var photoUrl= this.get('photoUrl');
 
             if (!photoUrl || photoUrl.length < 10) {
-              photoUrl = "img/default-goat.png";
+              photoUrl = "https://s3.amazonaws.com/goat-space-production/img/default-goat.png";
             }
 
             var goat = this.store.createRecord('goat', {
