@@ -13,9 +13,6 @@ export default Ember.Route.extend({
   },
   actions: {
     createGoat: function(goat) {
-      if (!goat.photoUrl || goat.photoUrl.length < 10) {
-        goat.set("photoUrl", "https://s3.amazonaws.com/goat-space-production/img/default-goat.png");
-      }
       goat.save();
       this.transitionTo('goats.show', goat);
       var newGoat = this.store.createRecord('goat');

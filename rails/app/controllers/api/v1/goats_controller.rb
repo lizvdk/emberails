@@ -21,6 +21,9 @@ class Api::V1::GoatsController < ApplicationController
   # POST /goats.json
   def create
     @goat = Goat.new(goat_params)
+    if !@goat.photo_url || @goat.photo_url.length < 10
+      @goat.photo_url = "https://s3.amazonaws.com/goat-space-production/img/default-goat.png"
+    end
 
     if @goat.save
       render json: @goat, status: 201, location: [:api, :v1, @goat]
