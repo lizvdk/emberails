@@ -11,12 +11,11 @@
 <br />
 
 <div class="row">
-  {{#if isEditing}}
-    {{partial "goats/form"}}
-    <button class="tiny radius" {{action "acceptChanges"}}>Done</button>
+  {{#if model.isEditing}}
+    {{goat-form goat=model save='acceptChanges'}}
   {{else}}
-    <button class="tiny radius" {{action "edit"}}>Edit</button>
-    <button class="tiny radius alert" {{action "deleteGoat"}}>Delete</button>
+    {{edit-goat-button goat=model}} 
+    {{delete-goat-button goat=model}}
   {{/if}}
 
   {{goat-fav-button goat=model}}
