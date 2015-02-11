@@ -1,0 +1,20 @@
+{{goat.name}}
+<form {{action 'save' on='submit'}}>
+  <div>
+    <label for="name">Name</label>
+    {{input id="name" type="text" value=goat.name}}
+  </div>
+  <div>
+    <label>Bio</label>
+    {{textarea id="bio" value=goat.bio}}
+  </div>
+  <div>
+    <label>Favorite Snack</label>
+    {{input type="text" value=goat.snack}}
+  </div>
+  <div>
+    <label>Photo (URL)</label>
+    {{input type="text" value=goat.photoUrl}}
+  </div>
+  <button class="tiny radius">Submit!</button>
+</form>
